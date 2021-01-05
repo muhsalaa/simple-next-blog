@@ -20,10 +20,22 @@ export const query = {
       "thumbnail": thumbnail.asset->url,
       "tags": tags[]->title
     }`,
-  detail: `*[_type=="post"]
+  articleSlug: `*[_type=="post"]
     {
-      content,
       "slug": slug.current,
+    }`,
+  articleDetail: `*[_type=="post" && slug.current == $slug]
+    {
+      title,
+      content[]{
+        ...,
+        asset-> {
+          ...,
+        }
+      },
+      created_at,
+      "thumbnail": thumbnail.asset->url,
+      mtr,
       "author": author->name,
       "tags": tags[]->title
     }`,

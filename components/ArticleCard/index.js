@@ -40,7 +40,7 @@ export function ArticleCard({ post }) {
         <div className="flex items-center text-xs text-gray-500">
           <FiCalendar className="mr-1.5" /> {shortDateFormat(created_at)}
         </div>
-        <Link href={`/articles/${slug}`}>
+        <Link href="/articles/[slug]" as={`articles/${slug}`}>
           <button className="flex items-center text-xs text-gray-50 bg-gray-700 py-1 px-2 rounded-full ml-auto focus:outline-none">
             Read article
             <FiArrowRight className="ml-1" />

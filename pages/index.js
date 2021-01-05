@@ -14,8 +14,8 @@ export default function Home({ data }) {
   return (
     <Layout>
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {data.map((post) => (
-          <ArticleCard key={post._id} post={post} />
+        {data.map((article) => (
+          <ArticleCard key={article._id} post={article} />
         ))}
       </div>
     </Layout>
